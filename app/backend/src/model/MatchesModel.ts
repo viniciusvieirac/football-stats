@@ -50,7 +50,7 @@ export default class MatchesModel implements IMatchModel {
   }
 
   public async create(match: NewEntity<IMatch>): Promise<IMatch> {
-    const newMatch = await this.model.create(match);
+    const newMatch = await this.model.create({ ...match, inProgress: true });
     return newMatch;
   }
 }

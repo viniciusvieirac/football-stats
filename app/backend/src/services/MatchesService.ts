@@ -48,6 +48,6 @@ export default class TeamService {
       return { status: 'NOT_FOUND', data: { message: 'There is no team with such id!' } };
     }
     const newMatch = await this.matchModel.create(match);
-    return { status: 'SUCCESSFUL', data: newMatch };
+    return { status: 'CREATED', data: newMatch };
   }
 }
