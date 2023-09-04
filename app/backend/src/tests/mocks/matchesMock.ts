@@ -336,3 +336,86 @@ export const matches =[
     in_progress: true,
   }
 ]
+
+export const createMatch = {
+  "homeTeamId": 16,
+  "awayTeamId": 8,
+  "homeTeamGoals": 2,
+  "awayTeamGoals": 2
+}
+
+export const updateBody = {
+  homeTeamGoals: 3,
+  awayTeamGoals: 0,
+};
+
+export const updateMatch = {
+  "id": 1,
+  "homeTeamId": 16,
+  "homeTeamGoals": updateBody.homeTeamGoals,
+  "awayTeamId": 8,
+  "awayTeamGoals": updateBody.awayTeamGoals,
+  "inProgress": true
+}
+
+export const inProgressMatches = [
+  {
+    id: 41,
+    homeTeamId: 16,
+    homeTeamGoals: 2,
+    awayTeamId: 9,
+    awayTeamGoals: 0,
+    inProgress: true,
+    homeTeam: {
+      teamName: 'São Paulo',
+    },
+    awayTeam: {
+      teamName: 'Internacional',
+    },
+  },
+  {
+    id: 42,
+    homeTeamId: 6,
+    homeTeamGoals: 1,
+    awayTeamId: 1,
+    awayTeamGoals: 0,
+    inProgress: true,
+    homeTeam: {
+      teamName: 'Ferroviária',
+    },
+    awayTeam: {
+      teamName: 'Avaí/Kindermann',
+    },
+  },
+];
+
+export const finishedMatches = [
+  {
+    id: 1,
+    homeTeamId: 16,
+    homeTeamGoals: 1,
+    awayTeamId: 8,
+    awayTeamGoals: 1,
+    inProgress: false,
+    homeTeam: {
+      teamName: 'Vasco da gama',
+    },
+    awayTeam: {
+      teamName: 'Flamengo',
+    },
+  },
+  {
+    id: 2,
+    homeTeamId: 9,
+    homeTeamGoals: 1,
+    awayTeamId: 14,
+    awayTeamGoals: 1,
+    inProgress: false,
+    homeTeam: {
+      teamName: 'Internacional',
+    },
+    awayTeam: {
+      teamName: 'Santos',
+    },
+  },
+];
