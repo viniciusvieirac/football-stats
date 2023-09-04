@@ -1,4 +1,4 @@
-import { ICRUDModelReader } from './ICrudModel';
+import { ICRUDModelCreator, ICRUDModelReader, ICRUDModelUpdater } from './ICrudModel';
 
 export default interface IMatch {
   id: number;
@@ -9,6 +9,8 @@ export default interface IMatch {
   inProgress: boolean;
 }
 
-export interface IMatchModel extends ICRUDModelReader<IMatch>{
+export interface IMatchModel extends ICRUDModelReader<IMatch>, ICRUDModelUpdater<IMatch>,
+  ICRUDModelCreator<IMatch> {
   getMatchByProgress(inProgress: boolean): Promise<IMatch[]>
+  finishMatch(id: number): Promise<[affectedCount: number]>
 }

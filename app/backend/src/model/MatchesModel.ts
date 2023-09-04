@@ -1,3 +1,4 @@
+import { NewEntity } from '../Interfaces';
 import SequelizeTeams from '../database/models/SequelizeTeams';
 import IMatch, { IMatchModel } from '../Interfaces/Matches';
 import SequelizeMatch from '../database/models/SequelizeMatch';
@@ -35,5 +36,21 @@ export default class MatchesModel implements IMatchModel {
       ],
     });
     return match;
+  }
+
+  public async update(id: number, result: IMatch): Promise<IMatch | null> {
+    await this.model.update(result, { where: { id } });
+    const updatedMatch = await this.model.findByPk(id);
+    return updatedMatch;
+  }
+
+  public async finishMatch(id: number): Promise<[affectedCount: number]> {
+    const finishMatch = await this.model.update({ inProgress: false }, { where: { id } });
+    return finishMatch;
+  }
+
+  public async create(match: NewEntity<IMatch>): Promise<IMatch> {
+    const newMatch = await this.model.create(match);
+    return newMatch;
   }
 }
