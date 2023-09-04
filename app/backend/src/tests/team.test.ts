@@ -13,32 +13,6 @@ chai.use(chaiHttp);
 const { expect } = chai;
 
 describe('teams route', () => {
-  /**
-   * Exemplo do uso de stubs com tipos
-   */
-
-  // let chaiHttpResponse: Response;
-
-  // before(async () => {
-  //   sinon
-  //     .stub(Example, "findOne")
-  //     .resolves({
-  //       ...<Seu mock>
-  //     } as Example);
-  // });
-
-  // after(()=>{
-  //   (Example.findOne as sinon.SinonStub).restore();
-  // })
-
-  // it('...', async () => {
-  //   chaiHttpResponse = await chai
-  //      .request(app)
-  //      ...
-
-  //   expect(...)
-  // });
-
   it('return all teams', async() => {
     sinon.stub(SequelizeTeams, 'findAll').resolves(teams as any);
 
