@@ -5,6 +5,8 @@ const leaderBoardController = new LeaderBoardController();
 
 const router = Router();
 
+router.get('/', (_req: Request, res: Response) => leaderBoardController
+  .getAll(_req, res));
 router.get('/home', (_req: Request, res: Response) => leaderBoardController
   . getLeaderBoardHome(_req, res));
 router.get('/away', (_req: Request, res: Response) => leaderBoardController

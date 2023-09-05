@@ -10,4 +10,9 @@ export default class LeaderBoardService {
     const matches = await this.leaderBoardModel.getLeaderBoard(principal);
     return { status: 'SUCCESSFUL', data: matches };
   }
+
+  public async getAll(): Promise<ServiceResponse<ILeaderBoard[]>> {
+    const matches = await this.leaderBoardModel.getAll();
+    return { status: 'SUCCESSFUL', data: matches };
+  }
 }
